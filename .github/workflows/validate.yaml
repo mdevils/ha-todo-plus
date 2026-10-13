@@ -1,0 +1,45 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  hacs:
+    name: HACS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hacs/action@main
+        with:
+          category: integration
+
+  hassfest:
+    name: Hassfest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master
+
+  frontend:
+    name: Frontend build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - working-directory: frontend
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+      - name: Ensure the committed card bundle is up to date
+        run: |
+          if ! git diff --quiet -- custom_components/todo_plus/www/todo-plus-card.js; then
+            echo "::error::Card bundle is out of date. Run 'cd frontend && npm run build' and commit the result."
+            git --no-pager diff --stat -- custom_components/todo_plus/www/todo-plus-card.js
+            exit 1
+          fi

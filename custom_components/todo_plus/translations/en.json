@@ -1,0 +1,167 @@
+{
+  "card": {
+    "add_task": "Add task",
+    "quick_add_placeholder": "Add a task…",
+    "new_task": "New task",
+    "edit_task": "Edit task",
+    "no_tasks": "No tasks yet.",
+    "section_todo": "To-do",
+    "section_scheduled": "Scheduled",
+    "section_completed": "Completed",
+    "name": "Name",
+    "description": "Description",
+    "due_date": "Due date",
+    "priority": "Priority",
+    "assignee": "Assignee",
+    "unassigned": "Unassigned",
+    "start_date": "Start date (hidden until then)",
+    "recurring": "Recurring task",
+    "every": "Every",
+    "unit": "Unit",
+    "mode": "Mode",
+    "hint": "Fixed schedule: recurs on an iCal RRULE calendar schedule anchored at the start date; missed periods stack. After completion: the next one appears the interval after you finish.",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving…",
+    "delete": "Delete",
+    "prio_low": "Low",
+    "prio_normal": "Normal",
+    "prio_high": "High",
+    "starts": "starts",
+    "rec_schedule": "schedule",
+    "rec_after": "after done",
+    "mode_after_completion": "After completion",
+    "mode_fixed": "Fixed schedule",
+    "freq_daily": "days",
+    "freq_weekly": "weeks",
+    "freq_monthly": "months",
+    "freq_yearly": "years",
+    "on": "On",
+    "by_monthday": "Day of the month",
+    "by_weekday": "Day of the week",
+    "day": "Day",
+    "day_last": "Last day",
+    "which": "Occurrence",
+    "weekday": "Weekday",
+    "month": "Month",
+    "pos_1": "First",
+    "pos_2": "Second",
+    "pos_3": "Third",
+    "pos_4": "Fourth",
+    "pos_last": "Last",
+    "ends": "Ends",
+    "ends_never": "Never",
+    "ends_after": "After",
+    "ends_on": "On date",
+    "occurrences": "occurrences",
+    "unit_days": "days",
+    "unit_weeks": "weeks",
+    "unit_months": "months",
+    "confirm_delete": "Delete \"%s\"?",
+    "clear_completed": "Clear completed",
+    "confirm_clear": "Clear %s completed task(s)?"
+  },
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add to-do list",
+        "description": "Create a new to-do list.",
+        "data": {
+          "name": "List name"
+        }
+      }
+    }
+  },
+  "services": {
+    "create_task": {
+      "name": "Create task",
+      "description": "Create a task in a to-do list. Keep it simple, or open Advanced options for a start date, priority and recurrence.",
+      "fields": {
+        "summary": { "name": "Name", "description": "The task name." },
+        "description": { "name": "Description", "description": "Optional longer description." },
+        "due_date": { "name": "Due date", "description": "Optional due date." },
+        "priority": { "name": "Priority", "description": "High sorts to the top, low to the bottom." },
+        "assignee": { "name": "Assignee", "description": "Optional person responsible (free text)." },
+        "start_date": { "name": "Start date", "description": "The task stays hidden until this date; also the schedule anchor for recurring tasks." },
+        "interval": { "name": "Interval", "description": "How many units between occurrences." },
+        "unit": { "name": "Interval unit", "description": "days, weeks or months." },
+        "mode": { "name": "Recurrence mode", "description": "'fixed' or 'after_completion'." }
+      },
+      "sections": {
+        "advanced": { "name": "Advanced options", "description": "Start date, priority and recurrence." }
+      }
+    },
+    "set_recurrence": {
+      "name": "Set recurrence",
+      "description": "Turn an existing task into a recurring one.",
+      "fields": {
+        "item": { "name": "Task", "description": "The task name or uid." },
+        "uid": { "name": "Task uid", "description": "The uid of the task." },
+        "start_date": { "name": "Start date", "description": "The schedule anchor." },
+        "interval": { "name": "Interval", "description": "How many units between occurrences." },
+        "unit": { "name": "Interval unit", "description": "days, weeks or months." },
+        "mode": { "name": "Recurrence mode", "description": "'fixed' or 'after_completion'." }
+      }
+    },
+    "clear_recurrence": {
+      "name": "Clear recurrence",
+      "description": "Stop a task recurring.",
+      "fields": {
+        "item": { "name": "Task", "description": "The task name or uid." },
+        "uid": { "name": "Task uid", "description": "The uid of the task." }
+      }
+    },
+    "set_start_date": {
+      "name": "Set start date",
+      "description": "Set or clear the start date of a task.",
+      "fields": {
+        "item": { "name": "Task", "description": "The task name or uid." },
+        "uid": { "name": "Task uid", "description": "The uid of the task." },
+        "start_date": { "name": "Start date", "description": "Leave empty to clear." }
+      }
+    },
+    "set_priority": {
+      "name": "Set priority",
+      "description": "Set the priority of a task (low, normal or high).",
+      "fields": {
+        "item": { "name": "Task", "description": "The task name or uid." },
+        "uid": { "name": "Task uid", "description": "The uid of the task." },
+        "priority": { "name": "Priority", "description": "low, normal or high." }
+      }
+    },
+    "delete_task": {
+      "name": "Delete task",
+      "description": "Delete a task by name or uid.",
+      "fields": {
+        "item": { "name": "Task", "description": "The task name or uid." },
+        "uid": { "name": "Task uid", "description": "The uid of the task." }
+      }
+    },
+    "update_task": {
+      "name": "Update task",
+      "description": "Update a task's name, description, due date or status (works on hidden future-start tasks too).",
+      "fields": {
+        "item": { "name": "Task", "description": "The task name or uid." },
+        "uid": { "name": "Task uid", "description": "The uid of the task." },
+        "summary": { "name": "Name", "description": "New task name." },
+        "description": { "name": "Description", "description": "New description." },
+        "due_date": { "name": "Due date", "description": "New due date." },
+        "status": { "name": "Status", "description": "needs_action or completed." },
+        "assignee": { "name": "Assignee", "description": "Person responsible (free text). Leave empty to clear." }
+      }
+    },
+    "set_assignee": {
+      "name": "Set assignee",
+      "description": "Set or clear who a task is assigned to.",
+      "fields": {
+        "item": { "name": "Task", "description": "The task name or uid." },
+        "uid": { "name": "Task uid", "description": "The uid of the task." },
+        "assignee": { "name": "Assignee", "description": "Person responsible (free text). Leave empty to clear." }
+      }
+    },
+    "clear_completed": {
+      "name": "Clear completed",
+      "description": "Remove all completed tasks from a list."
+    }
+  }
+}

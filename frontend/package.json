@@ -1,0 +1,36 @@
+{
+  "name": "todo-plus-card",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lovelace card for the Todo Plus Home Assistant integration",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && node build.mjs",
+    "watch": "node build.mjs --watch",
+    "dev": "node build.mjs --watch --dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "^15.15.0",
+    "prettier": "^3.9.6",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.65.0"
+  },
+  "dependencies": {
+    "@iconify/json": "^2.2.506",
+    "preact": "^10.29.7"
+  }
+}

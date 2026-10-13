@@ -1,0 +1,434 @@
+create_task:
+  name: Create task
+  description: >-
+    Create a task in a to-do list. Keep it simple with just a name, description
+    and due date, or open Advanced options for a start date, priority and
+    recurrence.
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    summary:
+      name: Name
+      description: The task name.
+      required: true
+      example: Clean the kettle
+      selector:
+        text:
+    description:
+      name: Description
+      description: Optional longer description.
+      selector:
+        text:
+          multiline: true
+    due_date:
+      name: Due date
+      description: Optional due date. Defaults to the start date for recurring tasks.
+      selector:
+        date:
+    advanced:
+      name: Advanced options
+      collapsed: true
+      fields:
+        priority:
+          name: Priority
+          description: Task priority. High sorts to the top, low to the bottom.
+          default: normal
+          selector:
+            select:
+              options:
+                - low
+                - normal
+                - high
+        assignee:
+          name: Assignee
+          description: Optional person responsible for the task (free text).
+          example: Alice
+          selector:
+            text:
+        start_date:
+          name: Start date
+          description: >-
+            The task stays hidden until this date. For recurring tasks this is
+            also the schedule anchor.
+          selector:
+            date:
+        mode:
+          name: Recurrence mode
+          description: >-
+            'fixed' follows an iCal RRULE calendar schedule regardless of
+            completion. 'after_completion' schedules the next occurrence
+            relative to when you finish the current one.
+          selector:
+            select:
+              options:
+                - fixed
+                - after_completion
+        interval:
+          name: Interval
+          description: Repeat every N units/periods (recurring tasks only). Defaults to 1.
+          example: 1
+          selector:
+            number:
+              min: 1
+              max: 999
+              mode: box
+        unit:
+          name: Interval unit (after_completion)
+          description: The unit for the interval in 'after_completion' mode.
+          selector:
+            select:
+              options:
+                - days
+                - weeks
+                - months
+        freq:
+          name: Frequency (fixed)
+          description: RRULE FREQ for 'fixed' mode.
+          selector:
+            select:
+              options:
+                - daily
+                - weekly
+                - monthly
+                - yearly
+        byday:
+          name: Weekdays (fixed)
+          description: >-
+            RRULE BYDAY. Weekly: the weekdays to repeat on. Monthly/yearly
+            'nth weekday': one weekday combined with 'bysetpos'.
+          selector:
+            select:
+              multiple: true
+              options:
+                - MO
+                - TU
+                - WE
+                - TH
+                - FR
+                - SA
+                - SU
+        bymonthday:
+          name: Day of month (fixed)
+          description: RRULE BYMONTHDAY, e.g. 15, or -1 for the last day.
+          selector:
+            number:
+              min: -31
+              max: 31
+              mode: box
+        bysetpos:
+          name: Nth occurrence (fixed)
+          description: >-
+            RRULE BYSETPOS, paired with a single weekday in 'byday'. 3 = third,
+            -1 = last (e.g. last Friday of the month).
+          selector:
+            number:
+              min: -366
+              max: 366
+              mode: box
+        bymonth:
+          name: Month (fixed, yearly)
+          description: RRULE BYMONTH (1-12) for yearly schedules.
+          selector:
+            number:
+              min: 1
+              max: 12
+              mode: box
+        count:
+          name: End after N occurrences (fixed)
+          description: RRULE COUNT. Ends the schedule after N occurrences.
+          selector:
+            number:
+              min: 1
+              max: 9999
+              mode: box
+        until:
+          name: End on date (fixed)
+          description: RRULE UNTIL. Ends the schedule on this date.
+          selector:
+            date:
+
+set_recurrence:
+  name: Set recurrence
+  description: Turn an existing task into a recurring one (or change its recurrence).
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    item:
+      name: Task
+      description: The task name (summary) or uid to make recurring.
+      example: Clean the kettle
+      selector:
+        text:
+    uid:
+      name: Task uid
+      description: The uid of the task (alternative to 'item').
+      selector:
+        text:
+    mode:
+      name: Recurrence mode
+      required: true
+      description: >-
+        'fixed' follows an iCal RRULE calendar schedule; 'after_completion'
+        schedules the next occurrence relative to when you finish the current one.
+      selector:
+        select:
+          options:
+            - fixed
+            - after_completion
+    interval:
+      name: Interval
+      description: Repeat every N units/periods. Defaults to 1.
+      example: 1
+      selector:
+        number:
+          min: 1
+          max: 999
+          mode: box
+    unit:
+      name: Interval unit (after_completion)
+      description: The unit for the interval in 'after_completion' mode.
+      selector:
+        select:
+          options:
+            - days
+            - weeks
+            - months
+    freq:
+      name: Frequency (fixed)
+      description: RRULE FREQ for 'fixed' mode.
+      selector:
+        select:
+          options:
+            - daily
+            - weekly
+            - monthly
+            - yearly
+    byday:
+      name: Weekdays (fixed)
+      description: >-
+        RRULE BYDAY. Weekly: the weekdays to repeat on. Monthly/yearly
+        'nth weekday': one weekday combined with 'bysetpos'.
+      selector:
+        select:
+          multiple: true
+          options:
+            - MO
+            - TU
+            - WE
+            - TH
+            - FR
+            - SA
+            - SU
+    bymonthday:
+      name: Day of month (fixed)
+      description: RRULE BYMONTHDAY, e.g. 15, or -1 for the last day.
+      selector:
+        number:
+          min: -31
+          max: 31
+          mode: box
+    bysetpos:
+      name: Nth occurrence (fixed)
+      description: >-
+        RRULE BYSETPOS, paired with a single weekday in 'byday'. 3 = third,
+        -1 = last (e.g. last Friday of the month).
+      selector:
+        number:
+          min: -366
+          max: 366
+          mode: box
+    bymonth:
+      name: Month (fixed, yearly)
+      description: RRULE BYMONTH (1-12) for yearly schedules.
+      selector:
+        number:
+          min: 1
+          max: 12
+          mode: box
+    count:
+      name: End after N occurrences (fixed)
+      description: RRULE COUNT. Ends the schedule after N occurrences.
+      selector:
+        number:
+          min: 1
+          max: 9999
+          mode: box
+    until:
+      name: End on date (fixed)
+      description: RRULE UNTIL. Ends the schedule on this date.
+      selector:
+        date:
+    start_date:
+      name: Start date
+      description: The schedule anchor. Defaults to the task's start or due date, else today.
+      selector:
+        date:
+
+clear_recurrence:
+  name: Clear recurrence
+  description: Stop a task recurring. Existing occurrences are kept as plain tasks.
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    item:
+      name: Task
+      description: The task name (summary) or uid.
+      selector:
+        text:
+    uid:
+      name: Task uid
+      selector:
+        text:
+
+set_start_date:
+  name: Set start date
+  description: Set (or clear) the start date of a task. The task is hidden until then.
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    item:
+      name: Task
+      description: The task name (summary) or uid.
+      selector:
+        text:
+    uid:
+      name: Task uid
+      selector:
+        text:
+    start_date:
+      name: Start date
+      description: Leave empty to clear the start date.
+      selector:
+        date:
+
+set_priority:
+  name: Set priority
+  description: Set the priority of a task (low, normal or high).
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    item:
+      name: Task
+      description: The task name (summary) or uid.
+      selector:
+        text:
+    uid:
+      name: Task uid
+      selector:
+        text:
+    priority:
+      name: Priority
+      required: true
+      default: normal
+      selector:
+        select:
+          options:
+            - low
+            - normal
+            - high
+
+delete_task:
+  name: Delete task
+  description: Delete a task by name or uid.
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    item:
+      name: Task
+      description: The task name (summary) or uid.
+      selector:
+        text:
+    uid:
+      name: Task uid
+      selector:
+        text:
+
+update_task:
+  name: Update task
+  description: >-
+    Update a task's name, description, due date or status. Works on any task,
+    including future-start ones hidden from the standard to-do list.
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    item:
+      name: Task
+      description: The task name (summary) or uid.
+      selector:
+        text:
+    uid:
+      name: Task uid
+      selector:
+        text:
+    summary:
+      name: Name
+      description: New task name.
+      selector:
+        text:
+    description:
+      name: Description
+      selector:
+        text:
+          multiline: true
+    due_date:
+      name: Due date
+      selector:
+        date:
+    status:
+      name: Status
+      selector:
+        select:
+          options:
+            - needs_action
+            - completed
+    assignee:
+      name: Assignee
+      description: Person responsible (free text). Leave empty to clear.
+      selector:
+        text:
+
+set_assignee:
+  name: Set assignee
+  description: Set (or clear) who a task is assigned to.
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo
+  fields:
+    item:
+      name: Task
+      description: The task name (summary) or uid.
+      selector:
+        text:
+    uid:
+      name: Task uid
+      selector:
+        text:
+    assignee:
+      name: Assignee
+      description: Person responsible (free text). Leave empty to clear.
+      example: Alice
+      selector:
+        text:
+
+clear_completed:
+  name: Clear completed
+  description: Remove all completed tasks from a list.
+  target:
+    entity:
+      integration: todo_plus
+      domain: todo

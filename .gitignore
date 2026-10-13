@@ -1,0 +1,11 @@
+# Node / frontend build tooling
+frontend/node_modules/
+frontend/*.log
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store

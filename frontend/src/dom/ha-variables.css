@@ -1,0 +1,332 @@
+:root {
+  /* text */
+  --primary-text-color: initial;
+  --secondary-text-color: initial;
+  --text-primary-color: initial;
+  --text-light-primary-color: initial;
+  --disabled-text-color: initial;
+
+  /* main interface colors */
+  --primary-color: initial;
+  --dark-primary-color: initial;
+  --darker-primary-color: initial;
+  --light-primary-color: initial;
+  --accent-color: initial;
+  --divider-color: initial;
+  --outline-color: initial;
+  --outline-hover-color: initial;
+  --shadow-color: initial;
+
+  /* rgb */
+  --rgb-primary-color: initial;
+  --rgb-accent-color: initial;
+  --rgb-primary-text-color: initial;
+  --rgb-secondary-text-color: initial;
+  --rgb-text-primary-color: initial;
+  --rgb-card-background-color: initial;
+
+  --rgb-warning-color: initial;
+  --rgb-error-color: initial;
+  --rgb-success-color: initial;
+  --rgb-info-color: initial;
+
+  --scrollbar-thumb-color: initial;
+
+  --error-color: initial;
+  --warning-color: initial;
+  --success-color: initial;
+  --info-color: initial;
+
+  /* backgrounds */
+  --card-background-color: initial;
+  --primary-background-color: initial;
+  --secondary-background-color: initial;
+  --clear-background-color: initial;
+
+  /* for label-badge */
+  --label-badge-grey: initial;
+
+  /* states icon */
+  --state-icon-color: initial;
+  /* an error state is anything that would be considered an error */
+  /* --state-icon-error-color: #db4437; derived from error-color */
+
+  /* energy */
+  --energy-grid-consumption-color: initial;
+  --energy-grid-return-color: initial;
+  --energy-solar-color: initial;
+  --energy-non-fossil-color: initial;
+  --energy-battery-out-color: initial;
+  --energy-battery-in-color: initial;
+  --energy-gas-color: initial;
+  --energy-water-color: initial;
+
+  /* color */
+  --disabled-color: initial;
+  --red-color: initial;
+  --pink-color: initial;
+  --purple-color: initial;
+  --deep-purple-color: initial;
+  --indigo-color: initial;
+  --blue-color: initial;
+  --light-blue-color: initial;
+  --cyan-color: initial;
+  --teal-color: initial;
+  --green-color: initial;
+  --light-green-color: initial;
+  --lime-color: initial;
+  --yellow-color: initial;
+  --amber-color: initial;
+  --orange-color: initial;
+  --deep-orange-color: initial;
+  --brown-color: initial;
+  --light-grey-color: initial;
+  --grey-color: initial;
+  --dark-grey-color: initial;
+  --blue-grey-color: initial;
+  --black-color: initial;
+  --white-color: initial;
+
+  /* colors - used for graphs, calendars, maps, etc */
+  --color-1: initial;
+  --color-2: initial;
+  --color-3: initial;
+  --color-4: initial;
+  --color-5: initial;
+  --color-6: initial;
+  --color-7: initial;
+  --color-8: initial;
+  --color-9: initial;
+  --color-10: initial;
+  --color-11: initial;
+  --color-12: initial;
+  --color-13: initial;
+  --color-14: initial;
+  --color-15: initial;
+  --color-16: initial;
+  --color-17: initial;
+  --color-18: initial;
+  --color-19: initial;
+  --color-20: initial;
+  --color-21: initial;
+  --color-22: initial;
+  --color-23: initial;
+  --color-24: initial;
+  --color-25: initial;
+  --color-26: initial;
+  --color-27: initial;
+  --color-28: initial;
+  --color-29: initial;
+  --color-30: initial;
+  --color-31: initial;
+  --color-32: initial;
+  --color-33: initial;
+  --color-34: initial;
+  --color-35: initial;
+  --color-36: initial;
+  --color-37: initial;
+  --color-38: initial;
+  --color-39: initial;
+  --color-40: initial;
+  --color-41: initial;
+  --color-42: initial;
+  --color-43: initial;
+  --color-44: initial;
+  --color-45: initial;
+  --color-46: initial;
+  --color-47: initial;
+  --color-48: initial;
+  --color-49: initial;
+  --color-50: initial;
+  --color-51: initial;
+  --color-52: initial;
+  --color-53: initial;
+  --color-54: initial;
+
+  /* history colors */
+  --history-unavailable-color: initial;
+
+  /* input components */
+  --input-idle-line-color: initial;
+  --input-hover-line-color: initial;
+  --input-disabled-line-color: initial;
+  --input-outlined-idle-border-color: initial;
+  --input-outlined-hover-border-color: initial;
+  --input-outlined-disabled-border-color: initial;
+  --input-fill-color: initial;
+  --input-disabled-fill-color: initial;
+  --input-ink-color: initial;
+  --input-label-ink-color: initial;
+  --input-disabled-ink-color: initial;
+  --input-dropdown-icon-color: initial;
+
+  /* for label-badge */
+  --label-badge-red: initial;
+  --label-badge-blue: initial;
+  --label-badge-green: initial;
+  --label-badge-yellow: initial;
+
+  /* state color */
+  --state-active-color: initial;
+  --state-inactive-color: initial;
+  --state-unavailable-color: initial;
+
+  /* state domain colors */
+  --state-alarm_control_panel-armed_away-color: initial;
+  --state-alarm_control_panel-armed_custom_bypass-color: initial;
+  --state-alarm_control_panel-armed_home-color: initial;
+  --state-alarm_control_panel-armed_night-color: initial;
+  --state-alarm_control_panel-armed_vacation-color: initial;
+  --state-alarm_control_panel-arming-color: initial;
+  --state-alarm_control_panel-disarming-color: initial;
+  --state-alarm_control_panel-pending-color: initial;
+  --state-alarm_control_panel-triggered-color: initial;
+  --state-alert-off-color: initial;
+  --state-alert-on-color: initial;
+  --state-binary_sensor-active-color: initial;
+  --state-binary_sensor-battery-on-color: initial;
+  --state-binary_sensor-carbon_monoxide-on-color: initial;
+  --state-binary_sensor-gas-on-color: initial;
+  --state-binary_sensor-heat-on-color: initial;
+  --state-binary_sensor-lock-on-color: initial;
+  --state-binary_sensor-moisture-on-color: initial;
+  --state-binary_sensor-problem-on-color: initial;
+  --state-binary_sensor-safety-on-color: initial;
+  --state-binary_sensor-smoke-on-color: initial;
+  --state-binary_sensor-sound-on-color: initial;
+  --state-binary_sensor-tamper-on-color: initial;
+  --state-climate-auto-color: initial;
+  --state-climate-cool-color: initial;
+  --state-climate-dry-color: initial;
+  --state-climate-fan_only-color: initial;
+  --state-climate-heat-color: initial;
+  --state-climate-heat-cool-color: initial;
+  --state-cover-active-color: initial;
+  --state-device_tracker-active-color: initial;
+  --state-device_tracker-home-color: initial;
+  --state-fan-active-color: initial;
+  --state-humidifier-on-color: initial;
+  --state-lawn_mower-active-color: initial;
+  --state-lawn_mower-error-color: initial;
+  --state-light-active-color: initial;
+  --state-lock-jammed-color: initial;
+  --state-lock-locked-color: initial;
+  --state-lock-locking-color: initial;
+  --state-lock-unlocked-color: initial;
+  --state-lock-unlocking-color: initial;
+  --state-lock-open-color: initial;
+  --state-lock-opening-color: initial;
+  --state-media_player-active-color: initial;
+  --state-person-active-color: initial;
+  --state-person-home-color: initial;
+  --state-plant-active-color: initial;
+  --state-siren-active-color: initial;
+  --state-sun-above_horizon-color: initial;
+  --state-sun-below_horizon-color: initial;
+  --state-switch-active-color: initial;
+  --state-update-active-color: initial;
+  --state-vacuum-active-color: initial;
+  --state-vacuum-error-color: initial;
+  --state-valve-active-color: initial;
+  --state-sensor-battery-high-color: initial;
+  --state-sensor-battery-low-color: initial;
+  --state-sensor-battery-medium-color: initial;
+  --state-water_heater-eco-color: initial;
+  --state-water_heater-electric-color: initial;
+  --state-water_heater-gas-color: initial;
+  --state-water_heater-heat_pump-color: initial;
+  --state-water_heater-high_demand-color: initial;
+  --state-water_heater-performance-color: initial;
+  --state-weather-clear_night-color: initial;
+  --state-weather-cloudy-color: initial;
+  --state-weather-exceptional-color: initial;
+  --state-weather-fog-color: initial;
+  --state-weather-hail-color: initial;
+  --state-weather-lightning_rainy-color: initial;
+  --state-weather-lightning-color: initial;
+  --state-weather-partlycloudy-color: initial;
+  --state-weather-pouring-color: initial;
+  --state-weather-rainy-color: initial;
+  --state-weather-snowy_rainy-color: initial;
+  --state-weather-snowy-color: initial;
+  --state-weather-sunny-color: initial;
+  --state-weather-windy_variant-color: initial;
+  --state-weather-windy-color: initial;
+
+  /* history colors */
+  --history-unknown-color: initial;
+
+  --state-icon-error-color: initial;
+  --sidebar-text-color: initial;
+  --sidebar-background-color: initial;
+  --sidebar-selected-text-color: initial;
+  --sidebar-selected-icon-color: initial;
+  --sidebar-icon-color: initial;
+  --slider-color: initial;
+  --slider-secondary-color: initial;
+  --slider-track-color: initial;
+  --label-badge-background-color: initial;
+  --label-badge-text-color: initial;
+  --table-header-background-color: initial;
+  --table-row-background-color: initial;
+  --table-row-alternative-background-color: initial;
+  --data-table-background-color: initial;
+  --markdown-code-background-color: initial;
+  --bar-box-shadow: initial;
+
+  /* https://github.com/material-components/material-web/blob/master/docs/theming.md */
+  --mdc-theme-primary: initial;
+  --mdc-theme-secondary: initial;
+  --mdc-theme-background: initial;
+  --mdc-theme-surface: initial;
+  --mdc-theme-on-primary: initial;
+  --mdc-theme-on-secondary: initial;
+  --mdc-theme-on-surface: initial;
+  --mdc-theme-text-disabled-on-light: initial;
+  --mdc-theme-text-primary-on-background: initial;
+  --mdc-theme-text-secondary-on-background: initial;
+  --mdc-theme-text-hint-on-background: initial;
+  --mdc-theme-text-icon-on-background: initial;
+  --mdc-theme-error: initial;
+  --app-header-text-color: initial;
+  --app-header-background-color: initial;
+  --app-header-border-bottom: initial;
+  --app-theme-color: initial;
+  --mdc-checkbox-unchecked-color: initial;
+  --mdc-checkbox-disabled-color: initial;
+  --mdc-radio-unchecked-color: initial;
+  --mdc-radio-disabled-color: initial;
+  --mdc-tab-text-label-color-default: initial;
+  --mdc-button-disabled-ink-color: initial;
+  --mdc-button-outline-color: initial;
+  --mdc-dialog-scroll-divider-color: initial;
+  --mdc-dialog-heading-ink-color: initial;
+  --mdc-dialog-content-ink-color: initial;
+  --mdc-text-field-idle-line-color: initial;
+  --mdc-text-field-hover-line-color: initial;
+  --mdc-text-field-disabled-line-color: initial;
+  --mdc-text-field-outlined-idle-border-color: initial;
+  --mdc-text-field-outlined-hover-border-color: initial;
+  --mdc-text-field-outlined-disabled-border-color: initial;
+  --mdc-text-field-fill-color: initial;
+  --mdc-text-field-disabled-fill-color: initial;
+  --mdc-text-field-ink-color: initial;
+  --mdc-text-field-label-ink-color: initial;
+  --mdc-text-field-disabled-ink-color: initial;
+
+  --mdc-select-idle-line-color: initial;
+  --mdc-select-hover-line-color: initial;
+  --mdc-select-outlined-idle-border-color: initial;
+  --mdc-select-outlined-hover-border-color: initial;
+  --mdc-select-outlined-disabled-border-color: initial;
+  --mdc-select-fill-color: initial;
+  --mdc-select-disabled-fill-color: initial;
+  --mdc-select-ink-color: initial;
+  --mdc-select-label-ink-color: initial;
+  --mdc-select-disabled-ink-color: initial;
+  --mdc-select-dropdown-icon-color: initial;
+  --mdc-select-disabled-dropdown-icon-color: initial;
+  --ha-assist-chip-filled-container-color: initial;
+  --ha-assist-chip-active-container-color: initial;
+  --chip-background-color: initial;
+}
